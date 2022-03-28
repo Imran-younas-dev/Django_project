@@ -1,0 +1,28 @@
+{% extends 'post/base.html' %}
+
+
+{% block content %}
+{% include 'post/navbar.html' %}
+ 	
+	<form method = 'POST' enctype="multipart/form-data">
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4  text-center fw-bold text-muted">Create new Blog</legend>
+        </fieldset>
+		{% csrf_token %}
+        <center>
+		<div class="card d-inline-block shadow sm  w-50 pb-3 bg-light">
+            <table class = 'w-50 table table-light' style="border-radius:10px;">
+                {% for field in upload_form %}
+                <tr>
+                    <th>{{field.label}}</th>
+                    <td class="text-info">{{ field }}</td>
+                </tr> 
+                {% endfor %}
+            </table>
+            <button type="submit" class="btn btn-lg text-white bg-secondary">Submit</button>
+   
+        </div>
+    </center>
+        
+	</form>
+{% endblock %}

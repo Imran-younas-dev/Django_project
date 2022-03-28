@@ -1,0 +1,19 @@
+{% extends 'post/base.html' %}
+
+
+{% block content %}
+{% include 'post/navbar.html' %}
+{% for blog in blogs %}
+<div class="card w-50 m-4">
+    <div class="card-body">
+      <h4 class="card-title fw-bold">{{blog.title}}</h4>
+      <p class="card-text text-muted ">{{blog.Describe}}</p>
+      <h5 class="text-muted">Auhor : <a href="profile/{{blog.id}}" class="text-info" style="font-size: medium;">{{blog.author}}</a> 
+      </h5>
+    </div>
+    <div class="card-footer text-muted">
+      {{blog.date}}
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

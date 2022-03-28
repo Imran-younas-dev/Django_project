@@ -1,0 +1,16 @@
+{% extends 'post/base.html' %}
+
+
+{% block content %}
+{% include 'post/navbar.html' %}
+{% for blog in blogs %}
+<div class="content-section">
+<div class="media">
+    <img class="rounded-circle account-img" src="" alt="">
+    <div class="media-body">
+    <h2 class="account-heading">{{blog}}</h2>
+</div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}
